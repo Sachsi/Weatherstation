@@ -1,0 +1,25 @@
+menu "Qwiic I2C configuration"
+
+    config QWIIC_I2C_SDA_GPIO
+        int "Qwiic SDA GPIO"
+        range 0 30
+        default 6
+        help
+            GPIO pin connected to the Qwiic SDA signal on the NULA Mini.
+
+    config QWIIC_I2C_SCL_GPIO
+        int "Qwiic SCL GPIO"
+        range 0 30
+        default 7
+        help
+            GPIO pin connected to the Qwiic SCL signal on the NULA Mini.
+
+    config QWIIC_I2C_SCL_FREQ_HZ
+        int "Qwiic SCL frequency (Hz)"
+        range 10000 400000
+        default 100000
+        help
+            SCL frequency for Qwiic devices. ESP-IDF applies this value per
+            device when its I2C device configuration is created.
+
+endmenu
